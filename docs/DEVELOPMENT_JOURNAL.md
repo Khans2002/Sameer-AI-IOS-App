@@ -175,3 +175,19 @@ This is the engineering journal for the app, not an in-app user journal. Add one
 **Decision:** Keep the Dynamic Island artwork abstract and original rather than imitating Apple's proprietary Siri artwork. The user's reference directs its warm/cool glass palette and layered-ribbon energy.
 
 **Next step:** Install this build on iPhone 16 Pro and verify the system Live Activity setting. Then implement the local language-model adapter and real conversation detail view.
+
+## 2026-10-03 — History-first navigation and source versioning
+
+**Goal:** Separate the conversation library from the active chat experience, and preserve the project in the user-created GitHub repository.
+
+**What changed / what was tested:** Moved the composer out of the history screen. The history screen now has search, Grid/List/Select, and New Chat. Opening a card or New Chat opens a dedicated chat screen with separate liquid-glass plus, input, and voice controls. When text is entered, the separate voice control transitions away and the Send button appears inside the expanded input surface. Tapping the conversation dismisses the keyboard. Initialized Git and pushed the initial project commit to the user-provided private repository.
+
+**Result and evidence:** The iPhoneOS build succeeds. GitHub `main` now tracks commit `e24225a` as the first project baseline.
+
+**Privacy impact:** Version control contains source and design documentation only. Model files, Derived Data, local Files workspace contents, and user conversations are excluded.
+
+**License impact:** No new open-source library was added.
+
+**Decision:** Start the voice preview directly from the dedicated chat screen; do not require a bottom-sheet confirmation. The iOS system still determines the exact Dynamic Island presentation and user settings can disable Live Activities.
+
+**Next step:** Push the navigation revision, then integrate and benchmark the selected local LLM runtime before downloading a test GGUF.
