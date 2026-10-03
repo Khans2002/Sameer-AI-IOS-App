@@ -1,0 +1,352 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* SameerAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* SameerAIApp.swift */; };
+		A10000000000000000000002 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* RootTabView.swift */; };
+		A10000000000000000000003 /* AppDirectories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* AppDirectories.swift */; };
+		A10000000000000000000004 /* FeatureSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* FeatureSettings.swift */; };
+		A10000000000000000000005 /* StorageInventoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* StorageInventoryService.swift */; };
+		A10000000000000000000006 /* ChatHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000006 /* ChatHomeView.swift */; };
+		A10000000000000000000007 /* PerformanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000007 /* PerformanceSettingsView.swift */; };
+		A10000000000000000000008 /* StorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000008 /* StorageView.swift */; };
+		A10000000000000000000009 /* ModelLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000B /* ModelLibrary.swift */; };
+		A1000000000000000000000A /* ModelLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000C /* ModelLibraryView.swift */; };
+		A1000000000000000000000B /* SameerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000D /* SameerTheme.swift */; };
+		A1000000000000000000000C /* ConversationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000E /* ConversationHistory.swift */; };
+		A1000000000000000000000D /* ConversationHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000F /* ConversationHistoryView.swift */; };
+		A1000000000000000000000E /* SameerVoiceActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000010 /* SameerVoiceActivityAttributes.swift */; };
+		A1000000000000000000000F /* VoiceActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* VoiceActivityManager.swift */; };
+		A10000000000000000000010 /* SameerAIWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000012 /* SameerAIWidgets.swift */; };
+		A10000000000000000000011 /* SameerVoiceLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000013 /* SameerVoiceLiveActivity.swift */; };
+		A10000000000000000000012 /* SameerVoiceActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000010 /* SameerVoiceActivityAttributes.swift */; };
+		A10000000000000000000013 /* SameerAIWidgets.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A20000000000000000000015 /* SameerAIWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A20000000000000000000001 /* SameerAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameerAIApp.swift; sourceTree = "<group>"; };
+		A20000000000000000000002 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		A20000000000000000000003 /* AppDirectories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirectories.swift; sourceTree = "<group>"; };
+		A20000000000000000000004 /* FeatureSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSettings.swift; sourceTree = "<group>"; };
+		A20000000000000000000005 /* StorageInventoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageInventoryService.swift; sourceTree = "<group>"; };
+		A20000000000000000000006 /* ChatHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHomeView.swift; sourceTree = "<group>"; };
+		A20000000000000000000007 /* PerformanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceSettingsView.swift; sourceTree = "<group>"; };
+		A20000000000000000000008 /* StorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageView.swift; sourceTree = "<group>"; };
+		A20000000000000000000009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000000000000000000000A /* SameerAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SameerAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2000000000000000000000B /* ModelLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLibrary.swift; sourceTree = "<group>"; };
+		A2000000000000000000000C /* ModelLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLibraryView.swift; sourceTree = "<group>"; };
+		A2000000000000000000000D /* SameerTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameerTheme.swift; sourceTree = "<group>"; };
+		A2000000000000000000000E /* ConversationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationHistory.swift; sourceTree = "<group>"; };
+		A2000000000000000000000F /* ConversationHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationHistoryView.swift; sourceTree = "<group>"; };
+		A20000000000000000000010 /* SameerVoiceActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameerVoiceActivityAttributes.swift; sourceTree = "<group>"; };
+		A20000000000000000000011 /* VoiceActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceActivityManager.swift; sourceTree = "<group>"; };
+		A20000000000000000000012 /* SameerAIWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameerAIWidgets.swift; sourceTree = "<group>"; };
+		A20000000000000000000013 /* SameerVoiceLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameerVoiceLiveActivity.swift; sourceTree = "<group>"; };
+		A20000000000000000000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20000000000000000000015 /* SameerAIWidgets.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; includeInIndex = 0; path = SameerAIWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A30000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A30000000000000000000005 /* Frameworks */ = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A40000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A40000000000000000000002 /* SameerAI */,
+				A4000000000000000000000A /* SameerAIWidgets */,
+				A40000000000000000000008 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A40000000000000000000002 /* SameerAI */ = {
+			isa = PBXGroup;
+			children = (
+				A40000000000000000000003 /* App */,
+				A40000000000000000000004 /* Core */,
+				A40000000000000000000005 /* Features */,
+				A20000000000000000000009 /* Info.plist */,
+			);
+			path = SameerAI;
+			sourceTree = "<group>";
+		};
+		A4000000000000000000000A /* SameerAIWidgets */ = { isa = PBXGroup; children = (A20000000000000000000012 /* SameerAIWidgets.swift */, A20000000000000000000013 /* SameerVoiceLiveActivity.swift */, A20000000000000000000014 /* Info.plist */); path = SameerAIWidgets; sourceTree = "<group>"; };
+		A40000000000000000000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000001 /* SameerAIApp.swift */,
+				A20000000000000000000002 /* RootTabView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000004 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000003 /* AppDirectories.swift */,
+				A20000000000000000000004 /* FeatureSettings.swift */,
+				A20000000000000000000005 /* StorageInventoryService.swift */,
+				A2000000000000000000000B /* ModelLibrary.swift */,
+				A2000000000000000000000D /* SameerTheme.swift */,
+				A2000000000000000000000E /* ConversationHistory.swift */,
+				A20000000000000000000010 /* SameerVoiceActivityAttributes.swift */,
+				A20000000000000000000011 /* VoiceActivityManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000005 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A40000000000000000000006 /* Chat */,
+				A40000000000000000000007 /* Settings */,
+				A40000000000000000000009 /* Storage */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000006 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000006 /* ChatHomeView.swift */,
+				A2000000000000000000000F /* ConversationHistoryView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000007 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000007 /* PerformanceSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000008 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2000000000000000000000A /* SameerAI.app */,
+				A20000000000000000000015 /* SameerAIWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A40000000000000000000009 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000008 /* StorageView.swift */,
+				A2000000000000000000000C /* ModelLibraryView.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A30000000000000000000004 /* Embed App Extensions */ = { isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; dstPath = ""; dstSubfolderSpec = 13; files = (A10000000000000000000013 /* SameerAIWidgets.appex in Embed App Extensions */, ); name = "Embed App Extensions"; runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXContainerItemProxy section */
+		A90000000000000000000001 /* PBXContainerItemProxy */ = { isa = PBXContainerItemProxy; containerPortal = A70000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = A50000000000000000000002; remoteInfo = SameerAIWidgets; };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		A90000000000000000000002 /* PBXTargetDependency */ = { isa = PBXTargetDependency; target = A50000000000000000000002 /* SameerAIWidgets */; targetProxy = A90000000000000000000001 /* PBXContainerItemProxy */; };
+/* End PBXTargetDependency section */
+
+/* Begin PBXNativeTarget section */
+		A50000000000000000000001 /* SameerAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A60000000000000000000002 /* Build configuration list for PBXNativeTarget "SameerAI" */;
+			buildPhases = (
+				A30000000000000000000002 /* Sources */,
+				A30000000000000000000001 /* Frameworks */,
+				A30000000000000000000003 /* Resources */,
+				A30000000000000000000004 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (A90000000000000000000002 /* PBXTargetDependency */, );
+			name = SameerAI;
+			productName = SameerAI;
+			productReference = A2000000000000000000000A /* SameerAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A50000000000000000000002 /* SameerAIWidgets */ = { isa = PBXNativeTarget; buildConfigurationList = A60000000000000000000003 /* Build configuration list for PBXNativeTarget "SameerAIWidgets" */; buildPhases = (A30000000000000000000006 /* Sources */, A30000000000000000000005 /* Frameworks */, A30000000000000000000007 /* Resources */); buildRules = (); dependencies = (); name = SameerAIWidgets; productName = SameerAIWidgets; productReference = A20000000000000000000015 /* SameerAIWidgets.appex */; productType = "com.apple.product-type.app-extension"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A70000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+				A50000000000000000000001 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+				};
+				A50000000000000000000002 = { CreatedOnToolsVersion = 27.0; };
+			};
+			buildConfigurationList = A60000000000000000000001 /* Build configuration list for PBXProject "SameerAI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A40000000000000000000001;
+			productRefGroup = A40000000000000000000008 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A50000000000000000000001 /* SameerAI */,
+				A50000000000000000000002 /* SameerAIWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A30000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A30000000000000000000007 /* Resources */ = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A30000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* SameerAIApp.swift in Sources */,
+				A10000000000000000000002 /* RootTabView.swift in Sources */,
+				A10000000000000000000003 /* AppDirectories.swift in Sources */,
+				A10000000000000000000004 /* FeatureSettings.swift in Sources */,
+				A10000000000000000000005 /* StorageInventoryService.swift in Sources */,
+				A10000000000000000000009 /* ModelLibrary.swift in Sources */,
+				A1000000000000000000000B /* SameerTheme.swift in Sources */,
+				A1000000000000000000000C /* ConversationHistory.swift in Sources */,
+				A10000000000000000000006 /* ChatHomeView.swift in Sources */,
+				A1000000000000000000000D /* ConversationHistoryView.swift in Sources */,
+				A10000000000000000000007 /* PerformanceSettingsView.swift in Sources */,
+				A10000000000000000000008 /* StorageView.swift in Sources */,
+				A1000000000000000000000A /* ModelLibraryView.swift in Sources */,
+				A1000000000000000000000E /* SameerVoiceActivityAttributes.swift in Sources */,
+				A1000000000000000000000F /* VoiceActivityManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A30000000000000000000006 /* Sources */ = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000010 /* SameerAIWidgets.swift in Sources */, A10000000000000000000011 /* SameerVoiceLiveActivity.swift in Sources */, A10000000000000000000012 /* SameerVoiceActivityAttributes.swift in Sources */); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A80000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		A80000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		A80000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 894X2YX28K;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SameerAI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sameer.privateai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A80000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 894X2YX28K;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SameerAI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sameer.privateai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A80000000000000000000005 /* Debug */ = { isa = XCBuildConfiguration; buildSettings = { APPLICATION_EXTENSION_API_ONLY = YES; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = 894X2YX28K; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = SameerAIWidgets/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 18.0; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.sameer.privateai.widgets; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; TARGETED_DEVICE_FAMILY = 1; }; name = Debug; };
+		A80000000000000000000006 /* Release */ = { isa = XCBuildConfiguration; buildSettings = { APPLICATION_EXTENSION_API_ONLY = YES; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = 894X2YX28K; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = SameerAIWidgets/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 18.0; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.sameer.privateai.widgets; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; TARGETED_DEVICE_FAMILY = 1; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A60000000000000000000001 /* Build configuration list for PBXProject "SameerAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80000000000000000000001 /* Debug */,
+				A80000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A60000000000000000000002 /* Build configuration list for PBXNativeTarget "SameerAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A80000000000000000000003 /* Debug */,
+				A80000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A60000000000000000000003 /* Build configuration list for PBXNativeTarget "SameerAIWidgets" */ = { isa = XCConfigurationList; buildConfigurations = (A80000000000000000000005 /* Debug */, A80000000000000000000006 /* Release */); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = A70000000000000000000001 /* Project object */;
+}
