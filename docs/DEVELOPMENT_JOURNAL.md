@@ -191,3 +191,19 @@ This is the engineering journal for the app, not an in-app user journal. Add one
 **Decision:** Start the voice preview directly from the dedicated chat screen; do not require a bottom-sheet confirmation. The iOS system still determines the exact Dynamic Island presentation and user settings can disable Live Activities.
 
 **Next step:** Push the navigation revision, then integrate and benchmark the selected local LLM runtime before downloading a test GGUF.
+
+## 2026-10-03 — Single voice experience and platform boundary
+
+**Goal:** Remove the duplicate in-app voice status bar and make the foreground voice presentation follow the user's glass-orb reference as closely as public iOS APIs allow.
+
+**What changed / what was tested:** Replaced the in-chat status bar with a single full-screen Sameer AI voice experience: a black glass orb with animated gold, white, and electric-blue ribbons. The existing Live Activity continues to provide the system-controlled Dynamic Island/home-screen status when iOS shows it.
+
+**Result and evidence:** The iPhoneOS build succeeds. The app now has one foreground voice visual instead of a second status-card design.
+
+**Privacy impact:** No microphone recording or network behavior was added.
+
+**License impact:** The visual is original native SwiftUI code. It is inspired by the user-provided palette and motion direction, not copied Siri artwork.
+
+**Decision:** Stop attempting to reproduce the proprietary Siri/Dynamic Island animation. Third-party apps cannot replace, animate, or force the system Dynamic Island while foregrounded. Prioritize the local LLM runtime, which provides the app's actual private-assistant value.
+
+**Next step:** Commit this revision and begin the text-first on-device inference integration.

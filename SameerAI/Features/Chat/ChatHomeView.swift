@@ -73,31 +73,34 @@ private struct ChatConversationView: View {
     private var voiceAvailable: Bool { !settings.essentialModeEnabled && settings.isEnabled(.voiceConversation) }
 
     var body: some View {
-        ScrollViewReader { proxy in
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 14) {
-                    if messages.isEmpty {
-                        ContentUnavailableView("New private chat", systemImage: "lock", description: Text("Messages stay on this iPhone. Choose a local model to receive real replies."))
-                            .padding(.top, 130)
-                    } else {
-                        ForEach(messages) { ChatBubble(message: $0).id($0.id) }
+        ZStack {
+            ScrollViewReader { proxy in
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: 14) {
+                        if messages.isEmpty {
+                            ContentUnavailableView("New private chat", systemImage: "lock", description: Text("Messages stay on this iPhone. Choose a local model to receive real replies."))
+                                .padding(.top, 130)
+                        } else {
+                            ForEach(messages) { ChatBubble(message: $0).id($0.id) }
+                        }
                     }
-                    if voiceSample.phase != .idle {
-                        VoiceSessionStatus(phase: voiceSample.phase, onStop: voiceSample.stop).id("voice-status")
-                    }
+                    .padding(.horizontal, 16).padding(.top, 16)
+                    .contentShape(Rectangle())
+                    .onTapGesture { composerFocused = false }
                 }
-                .padding(.horizontal, 16).padding(.top, 16)
-                .contentShape(Rectangle())
-                .onTapGesture { composerFocused = false }
+                .scrollDismissesKeyboard(.interactively)
+                .safeAreaInset(edge: .bottom) {
+                    ConversationComposer(prompt: $prompt, selectedPhoto: $selectedPhoto, showingCamera: $showingCamera, showingFileImporter: $showingFileImporter, attachmentNames: attachmentNames, voiceAvailable: voiceAvailable, isFocused: $composerFocused, onSend: sendMessage, onVoice: startVoice)
+                        .padding(.horizontal, 16).padding(.vertical, 9)
+                        .background(.ultraThinMaterial.opacity(0.9))
+                }
+                .onChange(of: messages.count) { _, _ in
+                    if let last = messages.last { withAnimation(.snappy) { proxy.scrollTo(last.id, anchor: .bottom) } }
+                }
             }
-            .scrollDismissesKeyboard(.interactively)
-            .safeAreaInset(edge: .bottom) {
-                ConversationComposer(prompt: $prompt, selectedPhoto: $selectedPhoto, showingCamera: $showingCamera, showingFileImporter: $showingFileImporter, attachmentNames: attachmentNames, voiceAvailable: voiceAvailable, isFocused: $composerFocused, onSend: sendMessage, onVoice: startVoice)
-                    .padding(.horizontal, 16).padding(.vertical, 9)
-                    .background(.ultraThinMaterial.opacity(0.9))
-            }
-            .onChange(of: messages.count) { _, _ in
-                if let last = messages.last { withAnimation(.snappy) { proxy.scrollTo(last.id, anchor: .bottom) } }
+            if voiceSample.phase != .idle {
+                VoiceExperienceOverlay(phase: voiceSample.phase, onStop: voiceSample.stop)
+                    .transition(.opacity.combined(with: .scale(scale: 0.96)))
             }
         }
         .background(SameerTheme.black.ignoresSafeArea())
@@ -230,18 +233,71 @@ private struct ChatBubble: View {
     }
 }
 
-private struct VoiceSessionStatus: View {
-    let phase: VoiceSamplePhase; let onStop: () -> Void
+private struct VoiceExperienceOverlay: View {
+    let phase: VoiceSamplePhase
+    let onStop: () -> Void
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     var body: some View {
-        HStack(spacing: 10) {
-            VoiceSampleWave(phase: phase, reduceMotion: false).frame(width: 62, height: 34)
-            VStack(alignment: .leading, spacing: 2) {
-                Text(phase.title).font(.subheadline.weight(.medium))
-                Text("Dynamic Island status is active").font(.caption).foregroundStyle(SameerTheme.secondary)
+        ZStack {
+            SameerTheme.black.opacity(0.97).ignoresSafeArea()
+            VStack(spacing: 28) {
+                VoiceGlassOrb(phase: phase, reduceMotion: reduceMotion)
+                    .frame(width: 308, height: 176)
+                VStack(spacing: 7) {
+                    Text(phase.title).font(.title2.weight(.medium))
+                    Text("Sameer AI voice stays private on this iPhone")
+                        .font(.subheadline).foregroundStyle(SameerTheme.secondary)
+                }
+                Button("Stop voice", action: onStop)
+                    .font(.body.weight(.medium))
+                    .foregroundStyle(SameerTheme.gold)
             }
-            Spacer()
-            Button("Stop", action: onStop).font(.caption.weight(.medium)).foregroundStyle(SameerTheme.gold)
-        }.padding(10).background(SameerTheme.elevated, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        }
+        .accessibilityAddTraits(.isModal)
+    }
+}
+
+private struct VoiceGlassOrb: View {
+    let phase: VoiceSamplePhase
+    let reduceMotion: Bool
+
+    var body: some View {
+        TimelineView(.animation(minimumInterval: reduceMotion ? 1 : 1.0 / 24.0)) { timeline in
+            let time = timeline.date.timeIntervalSinceReferenceDate
+            ZStack {
+                Ellipse()
+                    .fill(RadialGradient(colors: [.white.opacity(0.18), SameerTheme.blue.opacity(0.45), SameerTheme.black], center: .top, startRadius: 2, endRadius: 175))
+                Ellipse()
+                    .stroke(LinearGradient(colors: [SameerTheme.gold, .white.opacity(0.9), SameerTheme.blue, SameerTheme.gold], startPoint: .leading, endPoint: .trailing), lineWidth: 2)
+                VoiceRibbon(offset: -0.20, amplitude: 0.26, phase: time * 1.5)
+                    .stroke(SameerTheme.blue, style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                    .blur(radius: 1.2)
+                VoiceRibbon(offset: 0.02, amplitude: 0.18, phase: time * 1.5 + 1.2)
+                    .stroke(.white.opacity(0.95), style: StrokeStyle(lineWidth: 3.4, lineCap: .round))
+                VoiceRibbon(offset: 0.20, amplitude: phase == .thinking ? 0.36 : 0.25, phase: time * 1.5 + 2.5)
+                    .stroke(SameerTheme.gold, style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                    .blur(radius: 1)
+                Circle().fill(.white).frame(width: 9, height: 9).blur(radius: 5)
+            }
+        }
+        .accessibilityLabel(phase.title)
+    }
+}
+
+private struct VoiceRibbon: Shape {
+    let offset: CGFloat
+    let amplitude: CGFloat
+    let phase: Double
+
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let midY = rect.midY + rect.height * offset
+        path.move(to: CGPoint(x: rect.minX + 4, y: midY))
+        let first = CGPoint(x: rect.width * 0.30, y: midY - rect.height * amplitude * CGFloat(sin(phase)))
+        let second = CGPoint(x: rect.width * 0.68, y: midY + rect.height * amplitude * CGFloat(cos(phase)))
+        path.addCurve(to: CGPoint(x: rect.maxX - 4, y: midY), control1: first, control2: second)
+        return path
     }
 }
 
